@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/henri/Documents/projects/**)",
+      "Bash(npm create:*)",
+      "Bash(printf '\\\\n')",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npm ls:*)",
+      "Bash(node -e \"const ts = require\\(''''typescript''''\\); console.log\\(ts.version\\)\")"
+    ]
+  }
+}

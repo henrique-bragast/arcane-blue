@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Colors — preto puro + azul elétrico */
+  --color-abyss: #000000;
+  --color-deep: #05080F;
+  --color-surface: #080D18;
+  --color-elevated: #0D1525;
+  --color-border: #0F1E38;
+  --color-border-strong: #1A3260;
+
+  --color-accent: #2B7FFF;
+  --color-accent-hover: #5599FF;
+  --color-accent-glow: #1155CC;
+  --color-accent-muted: #061840;
+
+  --color-text-primary: #E8F0FF;
+  --color-text-secondary: #7A90B8;
+  --color-text-muted: #3D5070;
+
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+
+  /* Fonts */
+  --font-display: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 64px 64px; }
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-abyss);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: rgba(59, 123, 248, 0.3);
+    color: #F0F2FF;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-abyss);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-muted);
+  }
+}
