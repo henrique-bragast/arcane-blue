@@ -107,5 +107,8 @@
     "contact_title": "Contato",
     "tagline": "Times pequenos. Conversa direta. Software com propósito.",
     "rights": "Todos os direitos reservados."
+  },
+  "ui": {
+    "scroll_to_top": "Voltar ao topo"
   }
 }

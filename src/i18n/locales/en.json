@@ -107,5 +107,8 @@
     "contact_title": "Contact",
     "tagline": "Small teams. Direct communication. Software with purpose.",
     "rights": "All rights reserved."
+  },
+  "ui": {
+    "scroll_to_top": "Back to top"
   }
 }

@@ -107,5 +107,8 @@
     "contact_title": "Contacto",
     "tagline": "Equipos pequeños. Comunicación directa. Software con propósito.",
     "rights": "Todos los derechos reservados."
+  },
+  "ui": {
+    "scroll_to_top": "Volver arriba"
   }
 }
