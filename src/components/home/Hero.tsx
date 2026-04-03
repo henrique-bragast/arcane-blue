@@ -48,19 +48,28 @@ export function Hero() {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <motion.div
-          className="flex min-h-[calc(100vh-6rem)] items-center py-20 md:min-h-[calc(100vh-7rem)] md:py-28"
+          className="flex min-h-[calc(100vh-7rem)] items-center py-16 md:min-h-[calc(100vh-8rem)] md:py-20"
           variants={stagger}
           initial="hidden"
           animate="visible"
         >
-          <div className="max-w-4xl">
+          <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
             <motion.div variants={fadeUp} className="mb-6">
               <Badge variant="accent">{t('hero.badge')}</Badge>
             </motion.div>
 
+            <motion.div
+              variants={fadeUp}
+              className="mb-8 rounded-full border border-accent/20 bg-surface/70 px-6 py-3 shadow-[0_0_48px_rgba(43,127,255,0.14)] backdrop-blur-md"
+            >
+              <p className="font-display text-sm font-semibold tracking-[0.26em] text-accent md:text-base">
+                {t('hero.slogan')}
+              </p>
+            </motion.div>
+
             <motion.h1
               variants={fadeUp}
-              className="mb-6 text-5xl font-display font-bold leading-[1.03] tracking-tight text-text-primary md:text-7xl"
+              className="mb-6 max-w-4xl text-5xl font-display font-bold leading-[1.03] tracking-tight text-text-primary md:text-7xl lg:text-8xl"
             >
               {t('hero.headline_pre')}{' '}
               <GradientText>{t('hero.headline_highlight')}</GradientText>
@@ -69,21 +78,14 @@ export function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mb-5 font-display text-lg font-medium tracking-[0.12em] text-text-secondary uppercase md:text-xl"
-            >
-              {t('hero.slogan')}
-            </motion.p>
-
-            <motion.p
-              variants={fadeUp}
-              className="mb-10 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
+              className="mb-10 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+              className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
             >
               <Button size="lg" variant="primary" type="button" onClick={() => scrollTo('services')}>
                 {t('hero.cta_primary')}
@@ -94,7 +96,7 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-10 flex max-w-3xl flex-wrap justify-center gap-3">
               {tags.map((tag) => (
                 <span
                   key={tag}

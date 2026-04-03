@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Instagram, Mail, MapPin } from "lucide-react";
+import { Linkedin, Instagram, Mail, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SITE } from "@/lib/constants";
 
@@ -39,7 +39,6 @@ export function Footer() {
                   Icon: Linkedin,
                   label: "LinkedIn",
                 },
-                { href: SITE.social.github, Icon: Github, label: "GitHub" },
                 {
                   href: SITE.social.instagram,
                   Icon: Instagram,
