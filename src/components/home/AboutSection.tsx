@@ -52,7 +52,7 @@ export function AboutSection() {
               <motion.div
                 key={d.title}
                 variants={fadeUp}
-                className="rounded-2xl border border-border bg-surface p-5 transition-colors duration-300 hover:border-border-strong hover:bg-elevated sm:p-6"
+                className="rounded-2xl border border-border bg-surface p-4 transition-colors duration-300 hover:border-border-strong hover:bg-elevated sm:p-6"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted sm:h-11 sm:w-11">
                   {Icon && <Icon size={18} className="text-accent" />}

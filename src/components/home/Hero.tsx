@@ -48,7 +48,7 @@ export function Hero() {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
-          className="flex min-h-[calc(100svh-5rem)] items-center py-10 sm:min-h-[calc(100svh-6rem)] sm:py-14 md:min-h-[calc(100vh-8rem)] md:py-20"
+          className="flex items-start pt-10 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-28 lg:pb-28"
           variants={stagger}
           initial="hidden"
           animate="visible"
@@ -69,7 +69,7 @@ export function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="mb-6 max-w-4xl text-[2.8rem] font-display font-bold leading-[1.02] tracking-tight text-text-primary sm:text-5xl md:text-7xl lg:text-8xl"
+              className="mb-6 max-w-4xl text-[2rem] font-display font-bold leading-[1.02] tracking-tight text-text-primary sm:text-5xl md:text-7xl lg:text-8xl"
             >
               {t('hero.headline_pre')}{' '}
               <GradientText>{t('hero.headline_highlight')}</GradientText>

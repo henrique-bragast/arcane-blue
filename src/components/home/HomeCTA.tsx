@@ -16,7 +16,7 @@ export function HomeCTA() {
 
   return (
     <Section id="contact" className="bg-deep" size="lg">
-      <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-elevated px-5 py-8 sm:rounded-3xl sm:px-8 sm:py-10 md:px-12 md:py-14">
+      <div className="relative overflow-hidden rounded-2xl border border-border bg-elevated px-5 py-8 sm:rounded-[1.75rem] sm:px-8 sm:py-10 md:rounded-3xl md:px-12 md:py-14">
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
 
         <motion.div

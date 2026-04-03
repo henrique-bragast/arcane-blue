@@ -8,9 +8,9 @@ interface SectionProps {
 }
 
 const sizeMap = {
-  sm: 'py-12 sm:py-14 md:py-16',
-  md: 'py-16 sm:py-20 md:py-24',
-  lg: 'py-20 sm:py-24 md:py-32',
+  sm: 'py-10 sm:py-12 md:py-16',
+  md: 'py-12 sm:py-16 md:py-24',
+  lg: 'py-14 sm:py-20 md:py-32',
 }
 
 export function Section({ children, className, id, size = 'md' }: SectionProps) {
