@@ -5,8 +5,6 @@ export const SITE = {
   email: 'contact@arcaneblue.io',
   address: 'São Paulo, SP - Brasil',
   social: {
-    linkedin: 'https://linkedin.com/company/arcaneblue',
-    github: 'https://github.com/arcaneblue',
-    instagram: 'https://instagram.com/arcaneblue',
+    linkedin: 'https://linkedin.com/company/arcane-blue',
   },
 } as const

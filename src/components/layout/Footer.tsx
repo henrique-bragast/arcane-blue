@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Instagram, Mail, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SITE } from "@/lib/constants";
 
@@ -13,6 +13,7 @@ const navSections = [
 export function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
+  const [brandMain, brandAccent] = SITE.name.split(" ");
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -20,46 +21,42 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-deep">
       <div className="container mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_0.8fr_1fr]">
-          <div>
-            <Link to="/" className="mb-5 inline-flex">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.45fr)_220px_280px]">
+          <div className="flex flex-col items-start gap-6 lg:pr-10">
+            <Link to="/" className="inline-flex items-center gap-4">
               <img
-                src="/logo_arcane_blue.png?v=5"
-                alt="Arcane Blue"
-                className="h-14 w-auto"
+                src="/favicon.png"
+                alt=""
+                aria-hidden="true"
+                className="h-12 w-12 shrink-0 rounded-xl border border-border/70 bg-abyss object-cover"
               />
+              <div className="flex flex-col">
+                <span className="font-display text-2xl font-semibold leading-none text-text-primary">
+                  {brandMain} <span className="text-accent">{brandAccent}</span>
+                </span>
+                <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-text-muted">
+                  {SITE.tagline}
+                </span>
+              </div>
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-text-secondary">
+
+            <p className="max-w-md text-sm leading-relaxed text-text-secondary">
               {t("footer.description")}
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              {[
-                {
-                  href: SITE.social.linkedin,
-                  Icon: Linkedin,
-                  label: "LinkedIn",
-                },
-                {
-                  href: SITE.social.instagram,
-                  Icon: Instagram,
-                  label: "Instagram",
-                },
-              ].map(({ href, Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg border border-border bg-surface p-2 text-text-muted transition-colors hover:border-accent/40 hover:text-accent"
-                  aria-label={label}
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
+
+            <a
+              href={SITE.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-medium text-text-secondary transition-colors hover:border-accent/40 hover:text-accent"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} />
+              <span>LinkedIn</span>
+            </a>
           </div>
 
-          <div>
+          <div className="flex flex-col items-start pt-1">
             <h3 className="mb-4 text-sm font-display font-semibold uppercase tracking-widest text-text-primary">
               {t("footer.nav_title")}
             </h3>
@@ -78,7 +75,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-start pt-1">
             <h3 className="mb-4 text-sm font-display font-semibold uppercase tracking-widest text-text-primary">
               {t("footer.contact_title")}
             </h3>
@@ -100,11 +97,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 md:flex-row">
+        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
           <p className="text-sm text-text-muted">
             {"\u00A9"} {year} {SITE.name}. {t("footer.rights")}
           </p>
-          <p className="text-center font-mono text-xs text-text-muted md:text-right">
+          <p className="font-mono text-xs text-text-muted md:text-right">
             {t("footer.tagline")}
           </p>
         </div>
