@@ -3,21 +3,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-abyss: #000000;
-  --color-deep: #05080f;
-  --color-surface: #080d18;
-  --color-elevated: #0d1525;
-  --color-border: #0f1e38;
-  --color-border-strong: #1a3260;
+  --color-abyss: #02061a;
+  --color-deep: #040c24;
+  --color-surface: #071228;
+  --color-elevated: #0c1a38;
+  --color-border: #102040;
+  --color-border-strong: #1c3a6e;
 
-  --color-accent: #2b7fff;
-  --color-accent-hover: #5599ff;
-  --color-accent-glow: #1155cc;
-  --color-accent-muted: #061840;
+  --color-accent: #3b8fff;
+  --color-accent-hover: #6aaaf5;
+  --color-accent-glow: #1560d8;
+  --color-accent-muted: #071a45;
 
-  --color-text-primary: #e8f0ff;
-  --color-text-secondary: #7a90b8;
-  --color-text-muted: #3d5070;
+  --color-text-primary: #eaf1ff;
+  --color-text-secondary: #90a8d0;
+  --color-text-muted: #4e6890;
 
   --color-success: #10b981;
   --color-danger: #ef4444;
@@ -33,6 +33,22 @@
 @keyframes gridDrift {
   from { background-position: 0 0; }
   to   { background-position: 64px 64px; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes floatCode {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.07; }
+  33%       { transform: translateY(-16px) translateX(6px);  opacity: 0.13; }
+  66%       { transform: translateY(-6px)  translateX(-4px); opacity: 0.09; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.5); }
 }
 
 @layer base {
@@ -75,8 +91,8 @@
   }
 
   ::selection {
-    background-color: rgba(59, 123, 248, 0.3);
-    color: #f0f2ff;
+    background-color: rgba(59, 143, 255, 0.3);
+    color: #eaf1ff;
   }
 
   ::-webkit-scrollbar {
@@ -93,6 +109,23 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent-muted);
+    background: var(--color-accent-glow);
   }
+}
+
+/* Shimmer gradient — blue-only, electric */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #6aaaf5 0%,
+    #3b8fff 20%,
+    #8bc4ff 45%,
+    #3b8fff 70%,
+    #6aaaf5 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
 }

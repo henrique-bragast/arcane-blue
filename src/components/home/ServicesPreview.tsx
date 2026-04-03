@@ -47,11 +47,11 @@ export function ServicesPreview() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:border-border-strong hover:bg-elevated sm:p-6 md:p-7"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:border-accent/30 hover:bg-elevated hover:shadow-[0_0_36px_rgba(59,143,255,0.12)] sm:p-6 md:p-7"
               >
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted transition-colors duration-300 group-hover:bg-accent/20 sm:h-12 sm:w-12">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-[0_0_14px_rgba(59,143,255,0.3)] sm:h-12 sm:w-12">
                     {Icon && <Icon size={22} className="text-accent" />}
                   </div>
                   <div className="min-w-0 flex-1">

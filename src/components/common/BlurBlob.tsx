@@ -4,6 +4,7 @@ interface BlurBlobProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   opacity?: number
+  color?: string
 }
 
 const sizeMap = {
@@ -13,18 +14,20 @@ const sizeMap = {
   xl: 'w-[800px] h-[800px]',
 }
 
-export function BlurBlob({ size = 'lg', className, opacity = 0.15 }: BlurBlobProps) {
+export function BlurBlob({ size = 'lg', className, opacity = 0.15, color }: BlurBlobProps) {
   return (
     <div
       aria-hidden="true"
       className={cn(
-        'absolute rounded-full bg-accent pointer-events-none',
+        'absolute rounded-full pointer-events-none',
+        !color && 'bg-accent',
         sizeMap[size],
         className,
       )}
       style={{
         opacity,
         filter: 'blur(120px)',
+        ...(color ? { backgroundColor: color } : {}),
       }}
     />
   )

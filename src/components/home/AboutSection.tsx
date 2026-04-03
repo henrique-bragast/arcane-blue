@@ -40,7 +40,7 @@ export function AboutSection() {
         </ScrollReveal>
 
         <motion.div
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5"
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5"
           variants={stagger}
           initial="hidden"
           whileInView="visible"
@@ -52,15 +52,15 @@ export function AboutSection() {
               <motion.div
                 key={d.title}
                 variants={fadeUp}
-                className="rounded-2xl border border-border bg-surface p-4 transition-colors duration-300 hover:border-border-strong hover:bg-elevated sm:p-6"
+                className="group rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:border-accent/30 hover:bg-elevated hover:shadow-[0_0_28px_rgba(59,143,255,0.1)] sm:p-6"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted sm:h-11 sm:w-11">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-[0_0_14px_rgba(59,143,255,0.25)] sm:h-11 sm:w-11">
                   {Icon && <Icon size={18} className="text-accent" />}
                 </div>
                 <h3 className="mb-2 font-display text-lg font-semibold text-text-primary sm:text-xl">
                   {d.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-text-muted">
+                <p className="text-sm leading-relaxed text-text-secondary">
                   {d.desc}
                 </p>
               </motion.div>
