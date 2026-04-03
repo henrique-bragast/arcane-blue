@@ -16,7 +16,7 @@ export function Navbar() {
           <img
             src="/logo_arcane_blue.png?v=6"
             alt="Arcane Blue"
-            className="h-10 w-auto sm:h-12 md:h-14"
+            className="h-14 w-auto sm:h-16 md:h-20"
           />
         </Link>
 
