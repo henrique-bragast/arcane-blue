@@ -46,9 +46,9 @@ export function Hero() {
         style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }}
       />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+      <div className="container relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
-          className="flex min-h-[calc(100vh-7rem)] items-center py-16 md:min-h-[calc(100vh-8rem)] md:py-20"
+          className="flex min-h-[calc(100svh-5rem)] items-center py-10 sm:min-h-[calc(100svh-6rem)] sm:py-14 md:min-h-[calc(100vh-8rem)] md:py-20"
           variants={stagger}
           initial="hidden"
           animate="visible"
@@ -60,16 +60,16 @@ export function Hero() {
 
             <motion.div
               variants={fadeUp}
-              className="mb-8 rounded-full border border-accent/20 bg-surface/70 px-6 py-3 shadow-[0_0_48px_rgba(43,127,255,0.14)] backdrop-blur-md"
+              className="mb-8 rounded-2xl border border-accent/20 bg-surface/70 px-4 py-3 shadow-[0_0_48px_rgba(43,127,255,0.14)] backdrop-blur-md sm:rounded-full sm:px-6"
             >
-              <p className="font-display text-sm font-semibold tracking-[0.26em] text-accent md:text-base">
+              <p className="font-display text-[11px] font-semibold tracking-[0.18em] text-accent sm:text-sm sm:tracking-[0.24em] md:text-base">
                 {t('hero.slogan')}
               </p>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="mb-6 max-w-4xl text-5xl font-display font-bold leading-[1.03] tracking-tight text-text-primary md:text-7xl lg:text-8xl"
+              className="mb-6 max-w-4xl text-[2.8rem] font-display font-bold leading-[1.02] tracking-tight text-text-primary sm:text-5xl md:text-7xl lg:text-8xl"
             >
               {t('hero.headline_pre')}{' '}
               <GradientText>{t('hero.headline_highlight')}</GradientText>
@@ -78,29 +78,41 @@ export function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mb-10 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg"
+              className="mb-10 max-w-3xl text-base leading-relaxed text-text-secondary sm:text-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+              className="flex w-full max-w-md flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4"
             >
-              <Button size="lg" variant="primary" type="button" onClick={() => scrollTo('services')}>
+              <Button
+                size="lg"
+                variant="primary"
+                type="button"
+                onClick={() => scrollTo('services')}
+                className="w-full sm:w-auto"
+              >
                 {t('hero.cta_primary')}
                 <ArrowRight size={18} />
               </Button>
-              <Button size="lg" variant="outline" type="button" onClick={() => scrollTo('contact')}>
+              <Button
+                size="lg"
+                variant="outline"
+                type="button"
+                onClick={() => scrollTo('contact')}
+                className="w-full sm:w-auto"
+              >
                 {t('hero.cta_secondary')}
               </Button>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-10 flex max-w-3xl flex-wrap justify-center gap-3">
+            <motion.div variants={fadeUp} className="mt-8 flex max-w-3xl flex-wrap justify-center gap-2.5 sm:mt-10 sm:gap-3">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-border bg-surface/80 px-4 py-2 text-sm text-text-secondary backdrop-blur-sm"
+                  className="rounded-full border border-border bg-surface/80 px-3 py-2 text-xs text-text-secondary backdrop-blur-sm sm:px-4 sm:text-sm"
                 >
                   {tag}
                 </span>
@@ -113,7 +125,7 @@ export function Hero() {
       <motion.button
         type="button"
         onClick={() => scrollTo('about')}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-muted transition-colors hover:text-accent"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-text-muted transition-colors hover:text-accent md:block"
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}

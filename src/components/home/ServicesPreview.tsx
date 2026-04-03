@@ -32,7 +32,7 @@ export function ServicesPreview() {
         />
 
         <motion.div
-          className="grid grid-cols-1 gap-5 md:grid-cols-2"
+          className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2"
           variants={stagger}
           initial="hidden"
           whileInView="visible"
@@ -47,15 +47,15 @@ export function ServicesPreview() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:border-border-strong hover:bg-elevated"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-5 transition-all duration-300 hover:border-border-strong hover:bg-elevated sm:p-7"
               >
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted transition-colors duration-300 group-hover:bg-accent/20">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent-muted transition-colors duration-300 group-hover:bg-accent/20 sm:h-12 sm:w-12">
                     {Icon && <Icon size={22} className="text-accent" />}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="mb-2 font-display text-xl font-semibold text-text-primary">
+                    <h3 className="mb-2 font-display text-lg font-semibold text-text-primary sm:text-xl">
                       {item.title}
                     </h3>
                     <p className="mb-4 text-sm leading-relaxed text-text-secondary">
@@ -63,7 +63,7 @@ export function ServicesPreview() {
                     </p>
                     <ul className="space-y-1.5">
                       {item.features.map((feat) => (
-                        <li key={feat} className="flex items-center gap-2 text-sm text-text-muted">
+                        <li key={feat} className="flex items-start gap-2 text-sm leading-relaxed text-text-muted">
                           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           {feat}
                         </li>

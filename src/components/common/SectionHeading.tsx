@@ -33,19 +33,24 @@ export function SectionHeading({
   }
 
   return (
-    <ScrollReveal className={cn('mb-12', align === 'center' && 'text-center', className)}>
+    <ScrollReveal className={cn('mb-10 sm:mb-12', align === 'center' && 'text-center', className)}>
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 text-accent text-sm font-mono font-medium tracking-widest uppercase mb-4">
-          <span className="w-8 h-px bg-accent inline-block" />
+        <span className="mb-4 inline-flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-[0.22em] text-accent sm:text-sm">
+          <span className="inline-block h-px w-6 bg-accent sm:w-8" />
           {eyebrow}
-          <span className="w-8 h-px bg-accent inline-block" />
+          <span className="inline-block h-px w-6 bg-accent sm:w-8" />
         </span>
       )}
-      <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary leading-tight">
+      <h2 className="text-[2rem] font-display font-bold leading-[1.08] text-text-primary sm:text-4xl md:text-5xl">
         {renderTitle()}
       </h2>
       {subtitle && (
-        <p className={cn('mt-4 text-lg text-text-secondary max-w-2xl', align === 'center' && 'mx-auto')}>
+        <p
+          className={cn(
+            'mt-4 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg',
+            align === 'center' && 'mx-auto',
+          )}
+        >
           {subtitle}
         </p>
       )}
