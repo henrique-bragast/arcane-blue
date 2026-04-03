@@ -1,45 +1,57 @@
-import { Link } from 'react-router-dom'
-import { Linkedin, Github, Instagram, Mail, MapPin, Phone } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { SITE } from '@/lib/constants'
+import { Link } from "react-router-dom";
+import { Linkedin, Github, Instagram, Mail, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { SITE } from "@/lib/constants";
 
-const navSections = ['hero', 'stats', 'services', 'testimonials', 'contact']
+const navSections = [
+  { id: "hero", labelKey: null },
+  { id: "about", labelKey: "nav.about" },
+  { id: "services", labelKey: "nav.services" },
+  { id: "contact", labelKey: "nav.contact" },
+] as const;
 
 export function Footer() {
-  const { t } = useTranslation()
-  const year = new Date().getFullYear()
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
 
   const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <footer className="border-t border-border bg-deep">
-      <div className="container mx-auto px-6 max-w-7xl py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link to="/" className="inline-flex mb-5">
+      <div className="container mx-auto max-w-7xl px-6 py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_0.8fr_1fr]">
+          <div>
+            <Link to="/" className="mb-5 inline-flex">
               <img
-                src="/logo_arcane_blue.png"
+                src="/logo_arcane_blue.png?v=5"
                 alt="Arcane Blue"
-                className="h-20 w-auto rounded-xl opacity-90 hover:opacity-100 transition-opacity duration-200"
+                className="h-14 w-auto"
               />
             </Link>
-            <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
-              {t('footer.description')}
+            <p className="max-w-xs text-sm leading-relaxed text-text-secondary">
+              {t("footer.description")}
             </p>
-            <div className="flex items-center gap-3 mt-6">
+            <div className="mt-6 flex items-center gap-3">
               {[
-                { href: SITE.social.linkedin,  Icon: Linkedin,  label: 'LinkedIn'  },
-                { href: SITE.social.github,    Icon: Github,    label: 'GitHub'    },
-                { href: SITE.social.instagram, Icon: Instagram, label: 'Instagram' },
+                {
+                  href: SITE.social.linkedin,
+                  Icon: Linkedin,
+                  label: "LinkedIn",
+                },
+                { href: SITE.social.github, Icon: Github, label: "GitHub" },
+                {
+                  href: SITE.social.instagram,
+                  Icon: Instagram,
+                  label: "Instagram",
+                },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-surface border border-border text-text-muted hover:text-accent hover:border-accent/40 transition-colors"
+                  className="rounded-lg border border-border bg-surface p-2 text-text-muted transition-colors hover:border-accent/40 hover:text-accent"
                   aria-label={label}
                 >
                   <Icon size={16} />
@@ -48,58 +60,56 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation — scroll to section */}
           <div>
-            <h3 className="font-display font-semibold text-text-primary text-sm mb-4 uppercase tracking-widest">
-              {t('footer.nav_title')}
+            <h3 className="mb-4 text-sm font-display font-semibold uppercase tracking-widest text-text-primary">
+              {t("footer.nav_title")}
             </h3>
             <ul className="space-y-3">
-              {navSections.map((id) => (
+              {navSections.map(({ id, labelKey }) => (
                 <li key={id}>
                   <button
+                    type="button"
                     onClick={() => scrollTo(id)}
-                    className="text-text-secondary text-sm hover:text-accent transition-colors capitalize"
+                    className="text-sm text-text-secondary transition-colors hover:text-accent"
                   >
-                    {id === 'hero' ? SITE.name : id.charAt(0).toUpperCase() + id.slice(1)}
+                    {labelKey ? t(labelKey) : SITE.name}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-text-primary text-sm mb-4 uppercase tracking-widest">
-              {t('footer.contact_title')}
+            <h3 className="mb-4 text-sm font-display font-semibold uppercase tracking-widest text-text-primary">
+              {t("footer.contact_title")}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-text-secondary text-sm">
-                <Mail size={14} className="mt-0.5 text-accent shrink-0" />
-                <a href={`mailto:${SITE.email}`} className="hover:text-accent transition-colors break-all">
+              <li className="flex items-start gap-2 text-sm text-text-secondary">
+                <Mail size={14} className="mt-0.5 shrink-0 text-accent" />
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="break-all transition-colors hover:text-accent"
+                >
                   {SITE.email}
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-text-secondary text-sm">
-                <Phone size={14} className="mt-0.5 text-accent shrink-0" />
-                <span>{SITE.phone}</span>
-              </li>
-              <li className="flex items-start gap-2 text-text-secondary text-sm">
-                <MapPin size={14} className="mt-0.5 text-accent shrink-0" />
+              <li className="flex items-start gap-2 text-sm text-text-secondary">
+                <MapPin size={14} className="mt-0.5 shrink-0 text-accent" />
                 <span>{SITE.address}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-text-muted text-sm">
-            © {year} {SITE.name}. {t('footer.rights')}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 md:flex-row">
+          <p className="text-sm text-text-muted">
+            {"\u00A9"} {year} {SITE.name}. {t("footer.rights")}
           </p>
-          <p className="text-text-muted text-xs font-mono">
-            {t('footer.tagline')}
+          <p className="text-center font-mono text-xs text-text-muted md:text-right">
+            {t("footer.tagline")}
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,73 +1,82 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowRight, Mail, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
-import { BlurBlob } from '@/components/common/BlurBlob'
+import { ScrollReveal } from '@/components/common/ScrollReveal'
+import { Section } from '@/components/layout/Section'
 import { fadeUp, stagger } from '@/lib/animations'
+import { SITE } from '@/lib/constants'
 
 export function HomeCTA() {
   const { t } = useTranslation()
-  const sectionRef = useRef<HTMLElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-  const blobY = useTransform(scrollYProgress, [0, 1], ['-25%', '25%'])
+  const emailHref = `mailto:${SITE.email}`
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section ref={sectionRef} id="contact" className="relative overflow-hidden bg-deep py-32">
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="relative rounded-3xl border border-border bg-elevated overflow-hidden">
-          {/* Parallax blob inside the card */}
-          <motion.div
-            style={{ y: blobY }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            aria-hidden="true"
-          >
-            <BlurBlob size="lg" className="relative" opacity={0.22} />
-          </motion.div>
+    <Section id="contact" className="bg-deep" size="lg">
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-elevated px-8 py-12 md:px-12 md:py-14">
+        <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
 
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
-
-          <motion.div
-            className="relative z-10 py-20 px-8 text-center"
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-          >
-            <motion.p variants={fadeUp} className="text-accent text-sm font-mono tracking-widest uppercase mb-4">
+        <motion.div
+          className="grid items-center gap-10 lg:grid-cols-[1.35fr_0.8fr]"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          <div>
+            <motion.p variants={fadeUp} className="mb-4 text-sm font-mono uppercase tracking-widest text-accent">
               {t('cta.eyebrow')}
             </motion.p>
 
             <motion.h2
               variants={fadeUp}
-              className="text-4xl md:text-6xl font-display font-bold text-text-primary mb-6 leading-tight"
+              className="mb-6 text-4xl font-display font-bold leading-tight text-text-primary md:text-5xl"
             >
               {t('cta.title')}
             </motion.h2>
 
-            <motion.p variants={fadeUp} className="text-text-secondary text-lg max-w-xl mx-auto mb-10">
+            <motion.p variants={fadeUp} className="mb-8 max-w-2xl text-lg text-text-secondary">
               {t('cta.subtitle')}
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" variant="primary" onClick={() => scrollTo('hero')}>
+            <motion.div variants={fadeUp} className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <Button
+                size="lg"
+                variant="primary"
+                type="button"
+                onClick={() => { window.location.href = emailHref }}
+              >
                 {t('cta.primary')}
                 <ArrowRight size={18} />
               </Button>
-              <Button size="lg" variant="ghost" onClick={() => scrollTo('testimonials')}>
+              <Button size="lg" variant="ghost" type="button" onClick={() => scrollTo('services')}>
                 {t('cta.secondary')}
               </Button>
             </motion.div>
-          </motion.div>
-        </div>
+          </div>
+
+          <ScrollReveal className="rounded-2xl border border-border bg-surface p-6">
+            <p className="mb-4 text-xs font-mono uppercase tracking-widest text-text-muted">
+              {t('cta.email_hint')}
+            </p>
+            <a
+              href={emailHref}
+              className="mb-6 inline-flex items-center gap-3 text-lg font-semibold text-text-primary transition-colors hover:text-accent"
+            >
+              <Mail size={18} className="text-accent" />
+              {SITE.email}
+            </a>
+
+            <div className="flex items-start gap-3 text-sm text-text-secondary">
+              <MapPin size={16} className="mt-0.5 shrink-0 text-accent" />
+              <span>{SITE.address}</span>
+            </div>
+          </ScrollReveal>
+        </motion.div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -1,216 +1,111 @@
 {
   "nav": {
-    "contact": "Start a conversation"
+    "about": "About",
+    "services": "Services",
+    "contact": "Let's talk"
   },
   "hero": {
-    "badge": "Senior engineering for complex systems",
-    "headline_pre": "We build the systems",
-    "headline_highlight": "your business runs on",
-    "headline_post": ".",
-    "slogan": "Engineering at depth. Ownership as standard.",
-    "subtitle": "Arcane Blue partners with product and engineering teams to design, build and scale production software — with the architectural discipline most vendors skip.",
-    "cta_primary": "See how we work",
-    "cta_secondary": "Talk to our team",
-    "trusted": "Trusted by engineering and product leaders across finance, healthcare and technology"
-  },
-  "stats": {
-    "items": [
-      { "suffix": "+",    "label": "Engagements delivered"      },
-      { "suffix": " yrs", "label": "In production systems"      },
-      { "suffix": "%",    "label": "Client retention rate"      },
-      { "suffix": "+",    "label": "Senior engineers on team"   }
+    "badge": "Software engineering company",
+    "headline_pre": "We design and build",
+    "headline_highlight": "software that solves",
+    "headline_post": "real problems.",
+    "slogan": "Where code becomes magic",
+    "subtitle": "Arcane Blue joins digital products, internal platforms, integrations and evolving systems to turn business needs into clear, useful software that can keep growing.",
+    "cta_primary": "See services",
+    "cta_secondary": "Start a conversation",
+    "tags": [
+      "Digital products",
+      "Internal platforms",
+      "Integrations",
+      "Custom software"
     ]
   },
   "about": {
-    "eyebrow": "About Arcane Blue",
-    "title": "Not a vendor. An engineering partner.",
-    "highlight": "engineering partner",
-    "description": "Arcane Blue is a senior engineering firm. We take technical ownership of critical systems — from initial architecture through production and beyond. We work in small, focused teams with direct accountability to your engineering and product leadership. No account managers. No hand-offs to junior developers after the contract is signed.",
-    "description2": "Our work is most valuable when the cost of getting it wrong is high — greenfield systems, architecture overhauls, scaling crises and legacy modernizations that cannot afford downtime.",
+    "eyebrow": "About",
+    "title": "An engineering team to build, organize and evolve software with you.",
+    "highlight": "evolve software",
+    "description": "We do not sell rigid packages. We join the context, understand what already exists and help your team make solid technical decisions while the product keeps moving.",
+    "description2": "That can mean a fresh MVP, an internal platform, system integrations, automations, refactors or modernizing legacy software. The common thread is always the same: close engineering, practical delivery and none of the corporate theater.",
     "differentials": [
       {
-        "icon": "Target",
-        "title": "Technical ownership",
-        "desc": "We are not order-takers. We advise on architecture, flag risks before they become incidents and push back when a decision will create debt you'll regret."
+        "icon": "Sparkles",
+        "title": "Product thinking with hands-on code",
+        "desc": "We shape experience, architecture and delivery together instead of splitting strategy from execution."
       },
       {
-        "icon": "Layers",
-        "title": "Senior-only execution",
-        "desc": "Every engagement is staffed with mid-to-senior engineers. No bait-and-switch with junior teams after the statement of work is signed."
+        "icon": "Workflow",
+        "title": "Integrations that stay manageable",
+        "desc": "We connect APIs, services and internal flows without turning operations into something painful to maintain."
       },
       {
-        "icon": "Zap",
-        "title": "Lean team structure",
-        "desc": "2–4 person squads with direct client access. Fast decisions, clear accountability and no coordination overhead between you and the people writing the code."
+        "icon": "RefreshCw",
+        "title": "Evolution without starting over",
+        "desc": "We improve live systems carefully so you keep context, continuity and delivery speed."
       },
       {
         "icon": "Handshake",
-        "title": "Long-term thinking",
-        "desc": "We write code we would have to maintain ourselves. That changes the tradeoffs we make and the advice we give."
-      }
-    ],
-    "founded": "Founded in",
-    "founded_year": "2016",
-    "location": "Based in",
-    "location_value": "São Paulo, Brazil",
-    "team": "Team of",
-    "team_value": "40+ engineers",
-    "focus": "Focus",
-    "focus_value": "Production software"
-  },
-  "process": {
-    "eyebrow": "How we engage",
-    "title": "Direct. Structured. No surprises.",
-    "highlight": "No surprises.",
-    "subtitle": "A four-phase model refined across eight years and over 100 projects. Each phase has clear outputs and decision points — nothing moves forward without your sign-off.",
-    "steps": [
-      {
-        "number": "01",
-        "title": "Scoping",
-        "description": "Before proposals or estimates, we understand the real problem. We interview stakeholders, review existing systems and identify the constraints that will actually drive technical decisions. Most projects fail in this phase — ours don't."
-      },
-      {
-        "number": "02",
-        "title": "Architecture",
-        "description": "We document the proposed system design before building it. You receive architecture diagrams, technology decisions with rationale, a risk assessment and a phased delivery plan. Review, challenge and approve — before a line of code is written."
-      },
-      {
-        "number": "03",
-        "title": "Build",
-        "description": "Weekly deliverables, bi-weekly demos, full codebase access from day one. We integrate with your team, use your tooling and surface blockers in real time — not in the retrospective two months later."
-      },
-      {
-        "number": "04",
-        "title": "Operate",
-        "description": "We don't drop the codebase on handover day. Post-launch engagements include runbooks, on-call support and a structured knowledge transfer. Done means your team can own it confidently."
-      }
-    ]
-  },
-  "work": {
-    "eyebrow": "Selected work",
-    "title": "Problems we've solved",
-    "highlight": "we've solved",
-    "subtitle": "A selection from over 100 delivered engagements. Names changed where client confidentiality applies.",
-    "result_label": "Outcome",
-    "items": [
-      {
-        "name": "FinTrack",
-        "industry": "Financial Services",
-        "tags": ["Event-driven", "AWS", "PostgreSQL"],
-        "description": "A digital bank needed a transaction processing platform for their product launch. We designed and built the full system — from event ingestion to ledger reconciliation — handling 80,000 transactions per minute at peak load.",
-        "result": "99.97% uptime across the first 12 months post-launch"
-      },
-      {
-        "name": "MedUnify",
-        "industry": "Healthcare",
-        "tags": ["Data engineering", "LGPD", "HL7 / FHIR"],
-        "description": "A hospital network was running 18 disconnected clinical systems. We built a unified data layer that normalised patient records across all units, enabling real-time clinical decision support with full regulatory compliance.",
-        "result": "Data reconciliation reduced from 4 hours to under 3 minutes"
-      },
-      {
-        "name": "RetailAI",
-        "industry": "Retail",
-        "tags": ["Machine learning", "Python", "dbt"],
-        "description": "A national retailer was over-ordering by 25% due to inaccurate demand forecasting. We replaced spreadsheet-driven procurement with a production ML system integrated directly into their existing ERP.",
-        "result": "28% reduction in carrying costs within 90 days of deployment"
-      },
-      {
-        "name": "CloudShift",
-        "industry": "Insurance",
-        "tags": ["Microservices", "AWS", "Zero-downtime migration"],
-        "description": "A 15-year-old insurance platform was running on ageing on-premise infrastructure with mounting maintenance costs. We re-architected the core system into independent services and migrated to AWS — without a single hour of planned downtime.",
-        "result": "70% infrastructure cost reduction. First production deployment in week six."
+        "title": "Direct partnership",
+        "desc": "Small teams, honest communication and direct contact with the people shaping and writing the software."
       }
     ]
   },
   "services": {
-    "eyebrow": "What we build",
-    "title": "Services built around outcomes",
-    "highlight": "around outcomes",
-    "subtitle": "We don't sell hours. We solve problems. Each service is scoped around a clear technical objective and measured by what changes in your system.",
+    "eyebrow": "Services",
+    "title": "How we usually join projects",
+    "highlight": "join projects",
+    "subtitle": "We work across different kinds of software, always aiming for technical clarity, a good product experience and continuity after launch.",
     "items": [
       {
-        "title": "Full-Stack Engineering",
-        "description": "Production-grade software built to survive year three, not just launch day. APIs, web applications, background services and internal tools — with the same engineering standards at every scale.",
+        "title": "Digital products",
+        "description": "Web products and SaaS work from discovery through production-ready delivery.",
         "features": [
-          "Technology chosen for the problem, not the trend",
-          "API-first architecture with clear, versioned contracts",
-          "Automated testing as a default, not an afterthought",
-          "Architectural decision records on every engagement"
+          "Front-end and back-end in the same flow",
+          "APIs, dashboards and user journeys",
+          "A base that can grow with the product"
         ]
       },
       {
-        "title": "Cloud & Infrastructure",
-        "description": "Infrastructure that doesn't page you at 3am. We design, automate and operate cloud environments built around availability, cost efficiency and operational simplicity — not platform lock-in.",
+        "title": "Internal platforms",
+        "description": "Tools, portals and operational systems that help teams work better every day.",
         "features": [
-          "AWS, GCP and Azure — multi-cloud and cloud-native",
-          "Infrastructure as code (Terraform, Pulumi)",
-          "CI/CD pipelines with deployment confidence",
-          "Observability: structured logging, metrics, alerting"
+          "Back offices and dashboards",
+          "Business rules and internal automation",
+          "Integrations with systems already in place"
         ]
       },
       {
-        "title": "Security & Compliance",
-        "description": "Security that ships with the architecture, not after the incident. We embed threat modeling and compliance requirements into system design from day one — so exposure gets addressed before it gets exploited.",
+        "title": "Integrations and automation",
+        "description": "Connections between services, partners and processes that are still creating manual work today.",
         "features": [
-          "Threat modeling and architecture security review",
-          "LGPD and GDPR compliance implementation",
-          "Penetration testing and vulnerability assessment",
-          "Secrets management, RBAC and full audit trails"
+          "Third-party APIs and webhooks",
+          "Operational flows and data syncing",
+          "Automation built around reliability"
         ]
       },
       {
-        "title": "Data Engineering & Analytics",
-        "description": "Your systems already generate the signals you need. We build the pipelines, models and reporting layers that make that data usable at scale — without the sprawling data warehouse project that takes a year and delivers yesterday's numbers.",
+        "title": "Modernization and scale",
+        "description": "Structural improvements for software that is growing, changing phase or starting to feel technical pressure.",
         "features": [
-          "Event-driven pipelines and stream processing",
-          "Data modelling for analytical and operational workloads",
-          "Machine learning in production, not just in notebooks",
-          "BI dashboards that decision-makers actually use"
+          "Refactors guided by real priorities",
+          "Architecture and performance improvements",
+          "Safe migration of critical pieces"
         ]
-      }
-    ]
-  },
-  "testimonials": {
-    "eyebrow": "What clients say",
-    "title": "From the leaders who brought us back",
-    "subtitle": "Specific feedback from engineering and product leaders across our engagements.",
-    "items": [
-      {
-        "quote": "We'd worked with three development agencies before Arcane Blue. The difference wasn't the code quality — it was how they approached architecture decisions. They flagged problems we hadn't thought about yet.",
-        "author": "Ana Ribeiro",
-        "role": "Head of Engineering",
-        "company": "Nexus Finance",
-        "initials": "AR"
-      },
-      {
-        "quote": "The data platform they built became the foundation for our entire clinical reporting system. Three years later, the team that took ownership has had to make almost no structural changes to the original design.",
-        "author": "Fernanda Costa",
-        "role": "CTO",
-        "company": "Veritas Health",
-        "initials": "FC"
-      },
-      {
-        "quote": "What stood out was that they pushed back — on our timelines, on some of our requirements, on a technical decision I was attached to that would have caused serious problems later. That's the kind of partner you want.",
-        "author": "Carlos Mendes",
-        "role": "VP Engineering",
-        "company": "Meridian Group",
-        "initials": "CM"
       }
     ]
   },
   "cta": {
-    "eyebrow": "Start a conversation",
-    "title": "Bring us a hard problem.",
-    "subtitle": "We work best with teams that have a clear technical challenge and the authority to make decisions. If that describes your situation — let's talk.",
-    "primary": "Schedule a call",
-    "secondary": "See how we work"
+    "eyebrow": "Contact",
+    "title": "If you have software to launch or untangle, let's talk.",
+    "subtitle": "Share the context and we can figure out the best next step together. No canned pitch and no unnecessary pressure.",
+    "primary": "Send an email",
+    "secondary": "See services",
+    "email_hint": "Or write to"
   },
   "footer": {
-    "description": "Senior engineering for complex systems. We design, build and operate production software for teams that can't afford to get it wrong.",
+    "description": "Software engineering for products, platforms, integrations and systems that still need to keep evolving.",
     "nav_title": "Navigation",
     "contact_title": "Contact",
-    "tagline": "Depth over hype. Ownership over handoffs.",
+    "tagline": "Small teams. Direct communication. Software with purpose.",
     "rights": "All rights reserved."
   }
 }

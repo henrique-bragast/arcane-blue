@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
@@ -8,168 +7,114 @@ import { BlurBlob } from '@/components/common/BlurBlob'
 import { GradientText } from '@/components/common/GradientText'
 import { fadeUp, stagger } from '@/lib/animations'
 
-// Animates each word of a string individually
-function WordReveal({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
-  const words = text.split(' ')
-  return (
-    <motion.span
-      className={className}
-      variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: delay } } }}
-      initial="hidden"
-      animate="visible"
-    >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          className="inline-block mr-[0.25em] last:mr-0"
-          variants={{
-            hidden:  { opacity: 0, y: 20, filter: 'blur(4px)' },
-            visible: { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.span>
-  )
-}
-
 export function Hero() {
   const { t } = useTranslation()
-  const sectionRef = useRef<HTMLElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  })
-  const gridY     = useTransform(scrollYProgress, [0, 1], ['0%', '35%'])
-  const blob1Y    = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
-  const blob2Y    = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
-  const blob3Y    = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
-  const contentY  = useTransform(scrollYProgress, [0, 1], ['0%', '12%'])
-  const contentOp = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const tags = t('hero.tags', { returnObjects: true }) as string[]
+  const headlinePost = t('hero.headline_post')
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section
-      ref={sectionRef}
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-abyss"
-    >
-      {/* Animated grid background */}
-      <motion.div aria-hidden="true" style={{ y: gridY }} className="absolute inset-0">
+    <section id="hero" className="relative overflow-hidden bg-abyss">
+      <div aria-hidden="true" className="absolute inset-0">
         <div
-          className="w-full h-full opacity-[0.045]"
+          className="h-full w-full opacity-[0.045]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(43,127,255,1) 1px, transparent 1px),
               linear-gradient(90deg, rgba(43,127,255,1) 1px, transparent 1px)
             `,
             backgroundSize: '64px 64px',
-            animation: 'gridDrift 12s linear infinite',
           }}
         />
-      </motion.div>
+      </div>
 
-      {/* Parallax blobs */}
-      <motion.div style={{ y: blob1Y }} className="absolute -top-60 left-1/2 -translate-x-1/2 pointer-events-none">
+      <div className="pointer-events-none absolute -top-48 left-1/2 -translate-x-1/2">
         <BlurBlob size="xl" className="relative" opacity={0.2} />
-      </motion.div>
-      <motion.div style={{ y: blob2Y }} className="absolute top-1/3 -left-32 pointer-events-none">
+      </div>
+      <div className="pointer-events-none absolute left-0 top-32 -translate-x-1/2">
         <BlurBlob size="md" className="relative" opacity={0.12} />
-      </motion.div>
-      <motion.div style={{ y: blob3Y }} className="absolute bottom-1/4 -right-32 pointer-events-none">
+      </div>
+      <div className="pointer-events-none absolute bottom-20 right-0 translate-x-1/3">
         <BlurBlob size="md" className="relative" opacity={0.12} />
-      </motion.div>
+      </div>
 
-      {/* Bottom fade */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-48"
         style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }}
       />
 
-      {/* Content with parallax */}
-      <motion.div
-        style={{ y: contentY, opacity: contentOp }}
-        className="container mx-auto px-6 max-w-7xl relative z-10"
-      >
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <motion.div
-          className="text-center max-w-5xl mx-auto"
+          className="flex min-h-[calc(100vh-6rem)] items-center py-20 md:min-h-[calc(100vh-7rem)] md:py-28"
           variants={stagger}
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
-          <motion.div variants={fadeUp} className="mb-8">
-            <Badge variant="accent">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block mr-2 animate-pulse" />
-              {t('hero.badge')}
-            </Badge>
-          </motion.div>
+          <div className="max-w-4xl">
+            <motion.div variants={fadeUp} className="mb-6">
+              <Badge variant="accent">{t('hero.badge')}</Badge>
+            </motion.div>
 
-          {/* Main headline */}
-          <motion.h1
-            variants={fadeUp}
-            className="text-5xl md:text-7xl lg:text-[5.5rem] font-display font-bold text-text-primary leading-[1.05] tracking-tight mb-5"
-          >
-            {t('hero.headline_pre')}{' '}
-            <GradientText>{t('hero.headline_highlight')}</GradientText>
-            <br />
-            {t('hero.headline_post')}
-          </motion.h1>
+            <motion.h1
+              variants={fadeUp}
+              className="mb-6 text-5xl font-display font-bold leading-[1.03] tracking-tight text-text-primary md:text-7xl"
+            >
+              {t('hero.headline_pre')}{' '}
+              <GradientText>{t('hero.headline_highlight')}</GradientText>
+              {headlinePost && <> {headlinePost}</>}
+            </motion.h1>
 
-          {/* Slogan — word-by-word shimmer */}
-          <motion.div variants={fadeUp} className="mb-8">
-            <p className="text-xl md:text-2xl font-display font-medium text-text-secondary tracking-wide">
-              <WordReveal text={t('hero.slogan')} delay={0.3} />
-            </p>
-            {/* Animated underline */}
+            <motion.p
+              variants={fadeUp}
+              className="mb-5 font-display text-lg font-medium tracking-[0.12em] text-text-secondary uppercase md:text-xl"
+            >
+              {t('hero.slogan')}
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              className="mb-10 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
+            >
+              {t('hero.subtitle')}
+            </motion.p>
+
             <motion.div
-              className="h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mt-3"
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: '60%', opacity: 1 }}
-              transition={{ delay: 1.6, duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </motion.div>
+              variants={fadeUp}
+              className="flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+            >
+              <Button size="lg" variant="primary" type="button" onClick={() => scrollTo('services')}>
+                {t('hero.cta_primary')}
+                <ArrowRight size={18} />
+              </Button>
+              <Button size="lg" variant="outline" type="button" onClick={() => scrollTo('contact')}>
+                {t('hero.cta_secondary')}
+              </Button>
+            </motion.div>
 
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeUp}
-            className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            {t('hero.subtitle')}
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button size="lg" variant="primary" onClick={() => scrollTo('services')}>
-              {t('hero.cta_primary')}
-              <ArrowRight size={18} />
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollTo('contact')}>
-              {t('hero.cta_secondary')}
-            </Button>
-          </motion.div>
-
-          <motion.p variants={fadeUp} className="mt-14 text-text-muted text-sm font-mono tracking-wider">
-            {t('hero.trusted')}
-          </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-border bg-surface/80 px-4 py-2 text-sm text-text-secondary backdrop-blur-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
 
-      {/* Scroll cue */}
       <motion.button
-        onClick={() => scrollTo('stats')}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-muted hover:text-accent transition-colors"
+        type="button"
+        onClick={() => scrollTo('about')}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-muted transition-colors hover:text-accent"
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.0, duration: 0.6 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
         aria-label="Scroll down"
       >
         <motion.div

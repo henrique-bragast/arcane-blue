@@ -1,216 +1,111 @@
 {
   "nav": {
-    "contact": "Iniciar uma conversa"
+    "about": "Sobre",
+    "services": "Serviços",
+    "contact": "Falar com a gente"
   },
   "hero": {
-    "badge": "Engenharia sênior para sistemas complexos",
-    "headline_pre": "Construímos os sistemas",
-    "headline_highlight": "que o seu negócio depende",
-    "headline_post": ".",
-    "slogan": "Engenharia em profundidade. Ownership como padrão.",
-    "subtitle": "A Arcane Blue atua como parceira de engenharia de produto e time técnico para projetar, construir e escalar software de produção — com a disciplina arquitetural que a maioria dos fornecedores ignora.",
-    "cta_primary": "Veja como trabalhamos",
-    "cta_secondary": "Fale com nosso time",
-    "trusted": "Confiada por líderes de engenharia e produto em finanças, saúde e tecnologia"
-  },
-  "stats": {
-    "items": [
-      { "suffix": "+",      "label": "Engajamentos entregues"    },
-      { "suffix": " anos",  "label": "Em sistemas de produção"   },
-      { "suffix": "%",      "label": "Taxa de retenção de clientes" },
-      { "suffix": "+",      "label": "Engenheiros sênior no time" }
+    "badge": "Empresa de engenharia de software",
+    "headline_pre": "Projetamos e construímos",
+    "headline_highlight": "software que resolve",
+    "headline_post": "problemas reais.",
+    "slogan": "Where code becomes magic",
+    "subtitle": "A Arcane Blue entra em produtos digitais, plataformas internas, integrações e sistemas em evolução para transformar necessidade de negócio em software claro, útil e pronto para crescer.",
+    "cta_primary": "Ver serviços",
+    "cta_secondary": "Iniciar conversa",
+    "tags": [
+      "Produtos digitais",
+      "Plataformas internas",
+      "Integrações",
+      "Software sob medida"
     ]
   },
   "about": {
-    "eyebrow": "Sobre a Arcane Blue",
-    "title": "Não somos um fornecedor. Somos um parceiro de engenharia.",
-    "highlight": "parceiro de engenharia",
-    "description": "A Arcane Blue é uma firma de engenharia sênior. Assumimos responsabilidade técnica sobre sistemas críticos — da arquitetura inicial à produção contínua. Trabalhamos em times pequenos e focados, com accountability direta ao seu time de engenharia e produto. Sem gerentes de conta. Sem transferência para desenvolvedores júnior depois que o contrato é assinado.",
-    "description2": "Nosso trabalho tem mais valor quando o custo de errar é alto — sistemas greenfield, reformulações de arquitetura, crises de escalabilidade e modernizações legadas que não podem ter downtime.",
+    "eyebrow": "Sobre",
+    "title": "Um time de engenharia para construir, organizar e evoluir software com você.",
+    "highlight": "evoluir software",
+    "description": "Não vendemos pacote engessado. Entramos no contexto, entendemos o que já existe e ajudamos o time a tomar boas decisões enquanto o produto continua andando.",
+    "description2": "Isso pode ser um MVP saindo do papel, uma plataforma interna, integrações entre sistemas, automações, refactors ou a modernização de algo legado. O ponto em comum é sempre o mesmo: engenharia próxima, prática e sem teatro corporativo.",
     "differentials": [
       {
-        "icon": "Target",
-        "title": "Ownership técnico",
-        "desc": "Não somos executores de ordens. Aconselhamos sobre arquitetura, identificamos riscos antes que virem incidentes e questionamos quando uma decisão vai gerar dívida técnica que você vai se arrepender."
+        "icon": "Sparkles",
+        "title": "Produto com pé no código",
+        "desc": "Pensamos a experiência, a arquitetura e a entrega juntos, sem separar estratégia de execução."
       },
       {
-        "icon": "Layers",
-        "title": "Execução sênior exclusiva",
-        "desc": "Todo engajamento é alocado com engenheiros pleno e sênior. Sem bait-and-switch com times júnior depois que o contrato é assinado."
+        "icon": "Workflow",
+        "title": "Integrações que fazem sentido",
+        "desc": "Conectamos APIs, serviços e fluxos internos sem transformar a operação em um emaranhado difícil de manter."
       },
       {
-        "icon": "Zap",
-        "title": "Estrutura de time enxuta",
-        "desc": "Squads de 2 a 4 pessoas com acesso direto ao cliente. Decisões rápidas, accountability clara e sem overhead entre você e quem está escrevendo o código."
+        "icon": "RefreshCw",
+        "title": "Evolução sem recomeçar do zero",
+        "desc": "Melhoramos sistemas em produção com cuidado para preservar contexto, continuidade e ritmo do negócio."
       },
       {
         "icon": "Handshake",
-        "title": "Pensamento de longo prazo",
-        "desc": "Escrevemos código como se fôssemos mantê-lo. Isso muda os trade-offs que fazemos e os conselhos que damos."
-      }
-    ],
-    "founded": "Fundada em",
-    "founded_year": "2016",
-    "location": "Baseada em",
-    "location_value": "São Paulo, Brasil",
-    "team": "Time de",
-    "team_value": "40+ engenheiros",
-    "focus": "Foco",
-    "focus_value": "Software de produção"
-  },
-  "process": {
-    "eyebrow": "Como engajamos",
-    "title": "Direto. Estruturado. Sem surpresas.",
-    "highlight": "Sem surpresas.",
-    "subtitle": "Um modelo de quatro fases refinado ao longo de oito anos e mais de 100 projetos. Cada fase tem entregas claras e pontos de decisão — nada avança sem o seu aval.",
-    "steps": [
-      {
-        "number": "01",
-        "title": "Escopo",
-        "description": "Antes de propostas ou estimativas, entendemos o problema real. Entrevistamos stakeholders, revisamos sistemas existentes e mapeamos as restrições que vão de fato guiar as decisões técnicas. A maioria dos projetos falha nessa fase — os nossos não."
-      },
-      {
-        "number": "02",
-        "title": "Arquitetura",
-        "description": "Documentamos o design do sistema antes de construí-lo. Você recebe diagramas de arquitetura, decisões tecnológicas com justificativa, avaliação de riscos e um plano de entrega faseado. Revisar, questionar e aprovar — antes de uma linha de código ser escrita."
-      },
-      {
-        "number": "03",
-        "title": "Construção",
-        "description": "Entregas semanais, demos quinzenais, acesso total ao codebase desde o dia um. Integramos com o seu time, usamos o seu ferramental e sinalizamos bloqueios em tempo real — não na retrospectiva dois meses depois."
-      },
-      {
-        "number": "04",
-        "title": "Operação",
-        "description": "Não largamos o código no dia da entrega. Engajamentos pós-lançamento incluem runbooks, suporte on-call e uma transferência de conhecimento estruturada. Feito significa que o seu time consegue assumir com confiança."
-      }
-    ]
-  },
-  "work": {
-    "eyebrow": "Trabalhos selecionados",
-    "title": "Problemas que já resolvemos",
-    "highlight": "já resolvemos",
-    "subtitle": "Uma seleção de mais de 100 engajamentos entregues. Nomes alterados onde a confidencialidade do cliente se aplica.",
-    "result_label": "Resultado",
-    "items": [
-      {
-        "name": "FinTrack",
-        "industry": "Serviços Financeiros",
-        "tags": ["Event-driven", "AWS", "PostgreSQL"],
-        "description": "Um banco digital precisava de uma plataforma de processamento de transações para o lançamento do produto. Projetamos e construímos o sistema completo — da ingestão de eventos à reconciliação do ledger — suportando 80 mil transações por minuto no pico de carga.",
-        "result": "99,97% de uptime nos primeiros 12 meses após o lançamento"
-      },
-      {
-        "name": "MedUnify",
-        "industry": "Saúde",
-        "tags": ["Engenharia de dados", "LGPD", "HL7 / FHIR"],
-        "description": "Uma rede hospitalar operava 18 sistemas clínicos desconectados. Construímos uma camada de dados unificada que normalizou prontuários em todas as unidades, habilitando suporte à decisão clínica em tempo real com conformidade regulatória completa.",
-        "result": "Reconciliação de dados reduzida de 4 horas para menos de 3 minutos"
-      },
-      {
-        "name": "RetailAI",
-        "industry": "Varejo",
-        "tags": ["Machine learning", "Python", "dbt"],
-        "description": "Um varejista nacional estava comprando 25% a mais do necessário devido a previsão de demanda imprecisa. Substituímos o processo manual por planilhas com um sistema de ML em produção integrado diretamente ao ERP existente.",
-        "result": "28% de redução nos custos de carregamento em 90 dias após o deploy"
-      },
-      {
-        "name": "CloudShift",
-        "industry": "Seguros",
-        "tags": ["Microsserviços", "AWS", "Migração zero-downtime"],
-        "description": "Uma plataforma de seguros de 15 anos rodava em infraestrutura on-premise envelhecida com custos de manutenção crescentes. Rearquitetamos o sistema principal em serviços independentes e migramos para a AWS — sem uma hora sequer de downtime planejado.",
-        "result": "70% de redução nos custos de infraestrutura. Primeiro deploy em produção na semana seis."
+        "title": "Parceria direta",
+        "desc": "Times pequenos, conversa franca e contato com quem realmente está desenhando e escrevendo o software."
       }
     ]
   },
   "services": {
-    "eyebrow": "O que construímos",
-    "title": "Serviços orientados a resultados",
-    "highlight": "orientados a resultados",
-    "subtitle": "Não vendemos horas. Resolvemos problemas. Cada serviço é escopo em torno de um objetivo técnico claro e medido pelo que muda no seu sistema.",
+    "eyebrow": "Serviços",
+    "title": "Como a gente costuma entrar nos projetos",
+    "highlight": "entrar nos projetos",
+    "subtitle": "Trabalhamos em diferentes tipos de software, sempre com foco em clareza técnica, boa experiência e continuidade depois do lançamento.",
     "items": [
       {
-        "title": "Engenharia Full-Stack",
-        "description": "Software de produção construído para sobreviver ao ano três, não apenas ao dia de lançamento. APIs, aplicações web, serviços em background e ferramentas internas — com os mesmos padrões de engenharia em qualquer escala.",
+        "title": "Produtos digitais",
+        "description": "Produtos web e SaaS do discovery ao que precisa ir para produção.",
         "features": [
-          "Tecnologia escolhida pelo problema, não pela tendência",
-          "Arquitetura API-first com contratos versionados e claros",
-          "Testes automatizados como padrão, não como adendo",
-          "Registros de decisões arquiteturais em todo engajamento"
+          "Front-end e back-end no mesmo fluxo",
+          "APIs, painéis e jornadas de usuário",
+          "Base pronta para evoluir com o produto"
         ]
       },
       {
-        "title": "Cloud & Infraestrutura",
-        "description": "Infraestrutura que não te acorda às 3 da manhã. Projetamos, automatizamos e operamos ambientes cloud construídos em torno de disponibilidade, eficiência de custo e simplicidade operacional — sem lock-in de plataforma.",
+        "title": "Plataformas internas",
+        "description": "Ferramentas, portais e sistemas operacionais que ajudam o time a trabalhar melhor.",
         "features": [
-          "AWS, GCP e Azure — multi-cloud e cloud-native",
-          "Infraestrutura como código (Terraform, Pulumi)",
-          "Pipelines de CI/CD com confiança nos deploys",
-          "Observabilidade: logs estruturados, métricas, alertas"
+          "Backoffices e dashboards",
+          "Regras de negócio e automações internas",
+          "Integração com sistemas já existentes"
         ]
       },
       {
-        "title": "Segurança & Compliance",
-        "description": "Segurança que vai junto com a arquitetura, não depois do incidente. Incorporamos modelagem de ameaças e requisitos de compliance no design do sistema desde o início — para que as exposições sejam tratadas antes de serem exploradas.",
+        "title": "Integrações e automação",
+        "description": "Conexões entre serviços, parceiros e processos que hoje dependem de retrabalho manual.",
         "features": [
-          "Modelagem de ameaças e revisão de segurança arquitetural",
-          "Implementação de conformidade LGPD e GDPR",
-          "Pentesting e avaliação de vulnerabilidades",
-          "Gestão de secrets, RBAC e trilhas de auditoria completas"
+          "APIs de terceiros e webhooks",
+          "Fluxos operacionais e sincronização de dados",
+          "Automação com foco em confiabilidade"
         ]
       },
       {
-        "title": "Engenharia de Dados & Analytics",
-        "description": "Os seus sistemas já geram os sinais de que você precisa. Construímos os pipelines, modelos e camadas de reporting que tornam esses dados utilizáveis em escala — sem o projeto de data warehouse que leva um ano e entrega os números de ontem.",
+        "title": "Modernização e escala",
+        "description": "Ajustes estruturais para quando o software cresce, muda de fase ou começa a cobrar a conta técnica.",
         "features": [
-          "Pipelines event-driven e processamento de streams",
-          "Modelagem de dados para cargas analíticas e operacionais",
-          "Machine learning em produção, não só em notebooks",
-          "Dashboards de BI que tomadores de decisão realmente usam"
+          "Refactors guiados por prioridade real",
+          "Melhoria de arquitetura e performance",
+          "Migração de partes críticas com segurança"
         ]
-      }
-    ]
-  },
-  "testimonials": {
-    "eyebrow": "O que clientes dizem",
-    "title": "De líderes que nos contrataram novamente",
-    "subtitle": "Feedback específico de líderes de engenharia e produto ao longo dos nossos engajamentos.",
-    "items": [
-      {
-        "quote": "Trabalhamos com três agências de desenvolvimento antes da Arcane Blue. A diferença não era a qualidade do código — era a forma como eles abordavam as decisões de arquitetura. Eles identificaram problemas que a gente ainda não tinha considerado.",
-        "author": "Ana Ribeiro",
-        "role": "Head de Engenharia",
-        "company": "Nexus Finance",
-        "initials": "AR"
-      },
-      {
-        "quote": "A plataforma de dados que construíram se tornou a base de todo o nosso sistema de relatórios clínicos. Três anos depois, o time que assumiu o código precisou fazer quase nenhuma mudança estrutural no design original.",
-        "author": "Fernanda Costa",
-        "role": "CTO",
-        "company": "Veritas Health",
-        "initials": "FC"
-      },
-      {
-        "quote": "O que se destacou foi que eles questionaram — nossos prazos, alguns dos nossos requisitos, uma decisão técnica que eu defendia e que teria causado problemas sérios depois. É esse tipo de parceiro que você quer do seu lado.",
-        "author": "Carlos Mendes",
-        "role": "VP de Engenharia",
-        "company": "Grupo Meridian",
-        "initials": "CM"
       }
     ]
   },
   "cta": {
-    "eyebrow": "Inicie uma conversa",
-    "title": "Traga-nos um problema difícil.",
-    "subtitle": "Trabalhamos melhor com times que têm um desafio técnico claro e autonomia para tomar decisões. Se essa é a sua situação — vamos conversar.",
-    "primary": "Agendar uma conversa",
-    "secondary": "Ver como trabalhamos"
+    "eyebrow": "Contato",
+    "title": "Se você tem software para tirar do papel ou destravar, vamos conversar.",
+    "subtitle": "Compartilha o contexto e a gente pensa junto no melhor próximo passo. Sem discurso pronto e sem pressão desnecessária.",
+    "primary": "Enviar e-mail",
+    "secondary": "Ver serviços",
+    "email_hint": "Ou escreva para"
   },
   "footer": {
-    "description": "Engenharia sênior para sistemas complexos. Projetamos, construímos e operamos software de produção para times que não podem errar.",
+    "description": "Engenharia de software para produtos, plataformas, integrações e sistemas que precisam continuar evoluindo.",
     "nav_title": "Navegação",
     "contact_title": "Contato",
-    "tagline": "Profundidade acima do hype. Ownership acima de repasses.",
+    "tagline": "Times pequenos. Conversa direta. Software com propósito.",
     "rights": "Todos os direitos reservados."
   }
 }
